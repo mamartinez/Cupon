@@ -33,7 +33,7 @@ class DefaultController extends Controller
         }
         
         $em = $this->getDoctrine()->getEntityManager();
-        $oferta = $em->getRepository('OfertaBundle:Oferta')->findOfertaDelDia($ciudad);
+        $oferta = $em->getRepository('OfertaBundle:OfertaRepository')->findOfertaDelDia($ciudad);
         
         if (!$oferta) {
             throw $this->createNotFoundException('No se ha encontrado ninguna oferta del día en la ciudad seleccionada');
